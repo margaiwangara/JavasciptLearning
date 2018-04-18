@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form Validation With JS</title>
+</head>
+<body>
+    <div>
+        Enter Name:
+        <input type="text" name="name" id="name" size="30">
+        <span id="message"></span>
+    </div>
+
+    <script>
+        //helpID is #message
+        function editText(regex,input,helpID,helpMessage)
+        {
+            if(!regex.test(input))
+            {
+                if(helpID != null)
+                    while(helpID.childNodes[0])
+                    {
+                        helpID.removeChild(helpID.childNodes[0]);
+                    }
+                    helpID.appendChild(document.createTextNode(helpMessage));
+            }else
+            {
+                if(helpID != null){
+                    while(helpID.childNodes[0]){
+                        helpID.removeChild(helpID.childNodes[0]);
+                    }
+                }
+            }
+        }
+
+        //Error Handling
+        var custArray = ["Tom","Me","Meme"];
+        //throw new RangeError("Message");
+
+        /*
+            try{}catch(ex){if(ex instanceof RangeError){}}
+        */
+    </script>
+</body>
+</html>

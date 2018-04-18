@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Javascipt Events</title>
+    <style>
+        body{
+            display: block;
+            background:#fff;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form action="" id="myform">
+        <input type="text" id="charInput">
+        <p id="keyData">Key data</p>
+
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+
+    </form><br>
+
+    <img src="https://www.pexels.com/search/nature/" alt="" id="logo">
+    <button id="logoButton">Get Logo</button>
+
+    <input id="mouseInput" type="text" size="20"><br>
+
+    Mouse X:<input type="text" id="mouseX"></br>
+    Mouse Y:<input type="text" id="mouseY"></br>
+    
+    <script>
+        function getChar(event)
+        {
+            if(event.which == null)
+            {
+                return String.fromCharCode(event.keyCode);
+            }
+            else if(event.which != 0 && event.charCode != 0)
+            {
+                return String.fromCharCode(event.which);
+            }else
+            {
+                return null;
+            }
+        }
+
+        document.getElementById('charInput').onkeypress = function(event)
+        {
+            var char = getChar(event || window.event)
+            if(!char) return false;
+
+            document.getElementById('keyData').innerHTML = char + " was clicked";
+        }
+
+        document.getElementById('charInput').onfocus = function(event)
+        {
+            document.getElementById('keyData').innerHTML = "Input gained focus";
+        }
+        //onselect,onclick,onmouseover, onmouseout,onmousemove
+        //className,src
+
+        document.body.onmousemove = function(e)
+        {
+            e = e || window.event;
+
+            var pageX = e.pageX;
+            var pageY = e.pageY;
+
+            if(pageX == undefined)
+            {
+                pageX = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
+                pageY = e.clientY + document.body.scrollTop + document.documentElement.scrollTop;
+                
+            }
+
+            document.getElementById('mouseX').value = pageX;
+            document.getElementById('mouseY').value = pageY;
+
+            //getElementsByTagName('input') inputElement.type = 'text'
+
+            //Elements Styling
+            //getElementById('').style.backgroundColor = "";
+
+
+            //DOM Manipulation
+            /*
+                --Current URL--
+                window.location.href
+                --Current Host--
+                window.location.hostname
+                --Current Path--
+                window.location.pathname
+                --Redirect--
+                window.location.href = ''
+                --Forward Page and Backward--
+                history.forward(),history.back()
+
+                --Jump backwards and forward
+                history.go(-2), history.go(2)
+                --Reloading page--
+                window.location.reload(true);#EFDECD
+
+                --HTML of elements--Targets html tag
+                document.childNodes[1].style.someStyle = '';
+
+                --Specific Tag--
+                #id.childNodes[0].childNodes[0].style.someStyle = '';
+
+                --Node Type--text nodes cannot be style, if type = 1 it is a none text node
+                #id.childNodes[0].childNodes[0].nodeType
+                lastChild,firstChild
+
+                --Node Name--
+                #id.childNodes[0].childNodes[0].nodeName
+
+                --Attributes--
+                img.hasAttribute('alt')//has attribute of alt
+                img.setAttribute('alt','sampleimage')//set attribute
+                #id.attributes //get attributes of a particular tag
+
+                --Elements--
+                document.createElement('p');//createElement
+                #div.appendChild(p);//add element to div
+                #div.insertBefore(p,#div.childNode[0]
+                
+            */
+
+            
+        }
+    </script>
+
+    <div id="sampleDiv"></div>
+        <p id="sampleText">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias enim quasi, numquam, esse ad sint culpa cumque obcaecati tempora officia aperiam, tenetur temporibus expedita voluptas! Sint non possimus accusamus incidunt?
+        </p>
+    </div>
+</body>
+</html>

@@ -137,8 +137,14 @@
 
         var randArray = [6,88,9,74,25,21];
         document.write("In Array: ",inArray(randArray,8),"<br>");
+        
+        //recursive functions
 
-
+        document.write("<br>-----Event Handling----<br>");
+        function openAlert(mess)
+        {
+            alert(mess);
+        }
 
         // var name = prompt("What is your name?");
         // if (name != null) {
@@ -147,5 +153,8 @@
         // else
         //     alert("Please enter a name next time");
     </script>
+
+    <button id="myButton">Click Me!</button><br>
+    <a href="Javascript:void(0)" onClick="openAlert('This is me')">Say Something</a>
 </body>
 </html>

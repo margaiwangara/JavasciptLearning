@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Object Oriented Javascript</title>
+</head>
+<body>
+    
+    <script>
+        var sample = 
+        {
+            name:"Margai",
+            city:"Nairobi",
+            phone:"000-000-000",
+            email:"me@email.com",
+            money:200.50,
+            payDownBal: function(amtPaid){
+                this.money -= amtPaid;
+            },
+            addToBal: function(amtCharged){
+                this.money += amtCharged;
+            }
+        };
+
+        document.write("Customer Name: ",sample.name,"<br>");
+        //delete
+        // delete sample.email
+
+        //customer property
+
+        for(var prop in sample){
+            if(sample.hasOwnProperty(prop)){
+                document.write(prop,"<br>");
+            }
+        }
+
+        function Customer(name, street, city, state, email, balance)
+        {
+            this.name = name;
+            this.street = street;
+            this.city = city;
+            this.state = state;
+            this.email = email;
+            this.balance = balance;
+
+            this.payDownBal = function(amtpaid)
+            {
+                this.balance -= amtpaid;
+            }
+        }
+    </script>
+</body>
+</html>
