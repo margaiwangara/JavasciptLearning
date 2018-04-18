@@ -50,6 +50,16 @@
                 this.balance -= amtpaid;
             }
         }
+
+        var cust1 = new Customer("","","","","");
+
+        //shared value
+        Customer.prototype.isCreditAvail = true;
+        //shared methods
+        Customer.prototype.toString = function()
+        {
+            alert("Overide a method");
+        }
     </script>
 </body>
 </html>
