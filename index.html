@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Javascript Tutorial</title>
+    
+</head>
+<body>
+    <div id="username"></div>
+
+    <script>
+        //write to browser
+        document.write("5 + 4 = ",5 + 4,"<br>");
+
+        //decimal places
+        var balance = 1563.43;
+        document.write("Monthly payment: ",(balance / 12).toFixed(2),"<br>");
+        
+        //random number
+        var randNum = 5;
+        document.write("random Number++: ",randNum++,"<br>");
+        document.write("++random Number: ",++randNum,"<br>");
+
+        document.write("randNum += 5",randNum += 5,"<br>");
+
+        //order of operations BODMAS
+        document.write("3 + 2 * 5: ",3 + 2 * 5,"<br>");
+        document.write("(3 + 2) * 5: ", (3 + 2) * 5, "<br>");
+
+        //math operations
+        document.write("Math.E  = ",Math.E,"<br>");
+        /*
+            Math.abs() - absolute value
+            Math.cbrt() - cuberoot
+            Math.ceil()
+            Math.floor()
+            Math.round()
+            Math.log()
+            Math.log10(),max(),min(),pow(),sqrt()
+        */
+        
+        document.write("Random # (1-10) = ",Math.floor((Math.random() * 10) + 1),"<br>");
+
+        //strings to number
+        document.write("Converted String: ",Number("3.11"),"<br>")
+        //parseInt(),parseFloat() string to float, string to int
+
+        //working with strings
+        document.write("<br>---------Strings---------<br>");
+
+        //combine string
+        var randSTr = "This is " + "a long " + "string";
+
+        document.write("String length: ",randSTr.length,"<br>");
+        //index of string
+        document.write("Index of \"string\": ",randSTr.indexOf("string"),"<br>");
+
+        //slice
+        //string.slice(2,6),string.substr(19,4character),string.replace()
+        //string at index string.charAt(2)
+        //split into an array
+        var newString = randSTr.split(" ");
+        //trim whitespaces
+        //string.trim(),toUpperCase(),toLowerCase()
+        
+
+        document.write("<br>--------Conditions---------<br>");
+        //operators
+        var age = 5;//>= == != <= ===
+        //(condition) ? true:false;
+
+        document.write("<br>-------Looping------<br>");
+        //looping
+        //while(),do{}while(),for(),for
+        var person = {name: "Abdul",age: 21,address: "Mumias"};
+
+        //for (in)
+        for(i in person)
+        {
+            document.write(person[k] + "<br>");
+        }
+
+        //arrays
+        document.write("<br>------Arrays-----<br>");
+        var sample = ["Jay Jay","Mumias",21];
+        
+        document.write("1st Index",sample[0], "<br>");
+        sample[3] = "jay@me.com";
+        //overide index
+        sample.splice(2,1,"Juma","Action");
+        //delete
+        sample.splice(4,1);
+        //convert array to string
+        document.write("Array: ",sample.valueOf(),"<br>");
+        document.write("Array: ", sample.join(","), "<br>");
+        
+        //delete
+        delete sample[1];
+        //sort - alphabetical
+        sample.sort();
+
+        //sort numbers
+        var numSort = [1,5,6,8,3,7,9];
+
+        numSort.sort(function(x,y){return x - y});//desc y - x
+        document.write("Num sort: ",numSort.toString(),"<br>");
+
+        //combine arrays
+        var combinedArray = numSort.concat(sample);
+
+        //remove last item
+        numSort.pop();
+        //add 
+        numSort.push(200);
+        //delete first item
+        numSort.shift();
+        //add to first index
+        numSort.unshift(555);
+
+        //functions
+        document.write("<br>-----Functions--------<br>");
+
+        //in array
+        function inArray(arrayToCheck,value)
+        {
+            for(i = 0;i < arrayToCheck.length;i++)
+            {
+                if(arrayToCheck[i] === value)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        var randArray = [6,88,9,74,25,21];
+        document.write("In Array: ",inArray(randArray,8),"<br>");
+
+
+
+        // var name = prompt("What is your name?");
+        // if (name != null) {
+        //     document.getElementById("username").innerHTML = "Hello " + name;
+        // }
+        // else
+        //     alert("Please enter a name next time");
+    </script>
+</body>
+</html>
